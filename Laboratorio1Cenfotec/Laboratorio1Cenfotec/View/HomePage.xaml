@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Laboratorio1Cenfotec.View.HomePage">
+    <StackLayout>
+        <ListView x:Name="lstvAccounts"
+                  ItemsSource="{Binding lstPersonas}">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding Nombre}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Agregar" Command="{Binding AgregarPersonaCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
