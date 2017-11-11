@@ -14,10 +14,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\AgregarPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -28,9 +24,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\PersonaModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PersonaViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\AgregarPage.xaml.cs">
-      <DependentUpon>AgregarPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)View\" />
