@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Laboratorio1Cenfotec.View.UsuarioDetalle">
+
+    <StackLayout>
+        <!--Detalle Persona-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="30">
+            <StackLayout>
+                <Image Source="borrar_icon.png" HeightRequest="50" WidthRequest="50"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Carlos Mendez"/>
+                <Label Text="Descripcion Basica"/>
+            </StackLayout>
+        </StackLayout>
+        
+        <StackLayout HorizontalOptions="StartAndExpand" HeightRequest="500">
+            <BoxView Margin="0,0,0,250" BackgroundColor="Green" WidthRequest="400" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+
+            </BoxView>
+
+
+             <StackLayout BackgroundColor="Red" WidthRequest="400" HeightRequest="50" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+
+            </StackLayout>
+
+        </StackLayout>
+        <Button Text="Editar" BackgroundColor="Red"  VerticalOptions="EndAndExpand" HeightRequest="50"/>
+
+    </StackLayout>
+</ContentPage>

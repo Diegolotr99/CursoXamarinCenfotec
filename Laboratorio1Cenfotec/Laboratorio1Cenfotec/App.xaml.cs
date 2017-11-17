@@ -9,11 +9,11 @@ namespace Laboratorio1Cenfotec
         {
             InitializeComponent();
 
-            MainPage = new HomePage();
+            MainPage = new UsuarioDetalle();
         }
 
         protected override void OnStart()
-        {
+        {   
             // Handle when your app starts
         }
 

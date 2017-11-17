@@ -26,7 +26,7 @@ namespace Laboratorio1Cenfotec.Model
             lstPersonas.Add(new PersonaModel { Id = 2, Nombre = "Yendry" });
             lstPersonas.Add(new PersonaModel { Id = 3, Nombre = "Natasha" });
 
-            Thread.Sleep(6000);
+            Thread.Sleep(4000);
 
 
             return lstPersonas;
