@@ -7,11 +7,39 @@ using System.Windows.Input;
 using Laboratorio1Cenfotec.Model;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using Laboratorio1Cenfotec.View;
 
 namespace Laboratorio1Cenfotec.ViewModel
 {
     public class PersonaViewModel : INotifyPropertyChanged
     {
+        #region Singleton
+        private static PersonaViewModel instance = null;
+
+        private PersonaViewModel()
+        {
+            InitClass();
+            InitCommands();
+        }
+
+        public static PersonaViewModel GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new PersonaViewModel();
+            }
+            return instance;
+        }
+
+        public static void DeleteInstance()
+        {
+            if (instance != null)
+            {
+                instance = null;
+            }
+        }
+        #endregion
+
         #region Instances
 
         private List<PersonaModel> lstOriginalPersonas = new List<PersonaModel>();
@@ -62,19 +90,28 @@ namespace Laboratorio1Cenfotec.ViewModel
             }
         }
 
+        private PersonaModel _PersonaActual { get; set; }
+
+        public PersonaModel PersonaActual
+        {
+            get
+            {
+                return _PersonaActual;
+            }
+            set
+            {
+                _PersonaActual = value;
+                OnPropertyChanged("PersonaActual");
+            }
+        }
+
 
         public ICommand AgregarPersonaCommand { get; set; }
         public ICommand BorrarPersonaCommand { get; set; }
+        public ICommand VerPersonaCommand { get; set; }
+
 
         #endregion
-
-
-        public PersonaViewModel()
-        {
-
-            InitClass();
-            InitCommand();
-        }
 
         #region Methods
 
@@ -98,6 +135,13 @@ namespace Laboratorio1Cenfotec.ViewModel
 
             lstOriginalPersonas.RemoveAll(x=> x.Id == id);
 
+        }
+
+        private void VerPersona(int id)
+        {
+            PersonaActual =  lstOriginalPersonas.Where(x=> x.Id == id).FirstOrDefault();
+
+            ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new UsuarioDetalle());
 
         }
 
@@ -109,10 +153,11 @@ namespace Laboratorio1Cenfotec.ViewModel
             lstOriginalPersonas = lstPersonas.ToList();
         }
 
-        private void InitCommand()
+        private void InitCommands()
         {
             AgregarPersonaCommand = new Command(AgregarPersona);
             BorrarPersonaCommand = new Command<int>(BorrarPersona);
+            VerPersonaCommand = new Command<int>(VerPersona);
         }
 
         #endregion

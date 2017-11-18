@@ -9,7 +9,15 @@ namespace Laboratorio1Cenfotec
         {
             InitializeComponent();
 
-            MainPage = new UsuarioDetalle();
+            NavigationPage navigation = new NavigationPage(new HomePage());
+
+            App.Current.MainPage = new MasterDetailPage
+            {
+                Master = new HomeMenu(),
+                Detail = navigation
+            };
+
+            //MainPage = new HomePage();
         }
 
         protected override void OnStart()

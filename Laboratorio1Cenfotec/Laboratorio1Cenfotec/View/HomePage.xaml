@@ -13,13 +13,12 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding Nombre}" HorizontalOptions="Start" VerticalOptions="Center"/>
-                            <Image x:Name="imgExpan" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Source="borrar_icon.png" HeightRequest="28" WidthRequest="28">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.BorrarPersonaCommand, Source={x:Reference HomePage}}" 
+                             <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.VerPersonaCommand, Source={x:Reference HomePage}}" 
                                                           CommandParameter="{Binding Id}"/>
-                                </Image.GestureRecognizers>
-                            </Image>
+                                </StackLayout.GestureRecognizers>
+                            <Label Text="{Binding Nombre}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Image x:Name="imgExpan" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Source="ver_icon.png" HeightRequest="28" WidthRequest="28"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

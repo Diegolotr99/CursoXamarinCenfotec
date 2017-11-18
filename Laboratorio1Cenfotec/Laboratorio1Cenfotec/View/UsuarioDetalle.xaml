@@ -6,16 +6,40 @@
         <!--Detalle Persona-->
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Padding="30">
             <StackLayout>
-                <Image Source="borrar_icon.png" HeightRequest="50" WidthRequest="50"/>
+                <Image Source="{Binding PersonaActual.FotoPath}" HeightRequest="50" WidthRequest="50"/>
             </StackLayout>
             <StackLayout VerticalOptions="Center">
-                <Label Text="Carlos Mendez"/>
-                <Label Text="Descripcion Basica"/>
+                <Label Text="{Binding PersonaActual.Nombre}"/>
+                <Label Text="{Binding PersonaActual.Telefono}"/>
             </StackLayout>
         </StackLayout>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
-            <!--Cuadro Verde-->
+            <!--Informacion de Persona-->
             <StackLayout BackgroundColor="Green" HeightRequest="50"  HorizontalOptions="Fill" VerticalOptions="Start">
+                <!--Nombre-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre Completo:"/>
+                    <Label Text="{Binding PersonaActual.NombreCompleto}"/>
+                </StackLayout>
+                <!--Telefono-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefono:"/>
+                    <Label Text="{Binding PersonaActual.Telefono}"/>
+                </StackLayout>
+                <!--Direccion-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefono:"/>
+                    <Label Text="{Binding PersonaActual.Direccion}"/>
+                </StackLayout>
+                 <!--Fecha Nacimiento-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefono:"/>
+                    <Label Text="{Binding PersonaActual.FechaNacimiento}"/>
+                </StackLayout>
+            </StackLayout>
+            <!--Lista de Ventas-->
+            <StackLayout>
+
 
             </StackLayout>
             <!--Cuadro Rojo-->
