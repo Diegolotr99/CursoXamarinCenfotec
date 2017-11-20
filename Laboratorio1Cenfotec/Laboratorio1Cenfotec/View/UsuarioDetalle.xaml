@@ -15,7 +15,7 @@
         </StackLayout>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
             <!--Informacion de Persona-->
-            <StackLayout BackgroundColor="Green" HeightRequest="50"  HorizontalOptions="Fill" VerticalOptions="Start">
+            <StackLayout BackgroundColor="Green" HorizontalOptions="Fill" VerticalOptions="Start">
                 <!--Nombre-->
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Nombre Completo:"/>
@@ -28,23 +28,20 @@
                 </StackLayout>
                 <!--Direccion-->
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Telefono:"/>
+                    <Label Text="Direccion:"/>
                     <Label Text="{Binding PersonaActual.Direccion}"/>
                 </StackLayout>
                  <!--Fecha Nacimiento-->
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Telefono:"/>
+                    <Label Text="Fecha de Nacimiento:"/>
                     <Label Text="{Binding PersonaActual.FechaNacimiento}"/>
                 </StackLayout>
             </StackLayout>
             <!--Lista de Ventas-->
             <StackLayout>
-
-
             </StackLayout>
             <!--Cuadro Rojo-->
-             <StackLayout BackgroundColor="Red" HeightRequest="50" VerticalOptions="EndAndExpand" HorizontalOptions="Fill">
-
+            <StackLayout BackgroundColor="Red" HeightRequest="50" VerticalOptions="EndAndExpand" HorizontalOptions="Fill">
             </StackLayout>
         </StackLayout>
         <Button Text="Editar" VerticalOptions="End" HeightRequest="50"/>

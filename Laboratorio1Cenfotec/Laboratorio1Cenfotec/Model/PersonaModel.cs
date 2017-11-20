@@ -48,11 +48,17 @@ namespace Laboratorio1Cenfotec.Model
 
             ObservableCollection<PersonaModel> lstPersonas = new ObservableCollection<PersonaModel>();
 
-           
 
-            lstPersonas.Add(new PersonaModel { Id = 1, Nombre = "Carlos" });
-            lstPersonas.Add(new PersonaModel { Id = 2, Nombre = "Yendry" });
-            lstPersonas.Add(new PersonaModel { Id = 3, Nombre = "Natasha" });
+            lstPersonas.Add(new PersonaModel { Id = 1, Nombre = "Carlos", ApellidoPaterno="Bejarano", ApellidoMaterno="Alpizar", FotoPath="foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 2, Nombre = "Yendry", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 3, Nombre = "Natasha", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 4, Nombre = "Jose", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 5, Nombre = "Andres", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 6, Nombre = "Natalia", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 7, Nombre = "Benjamin", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 8, Nombre = "Johan", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 9, Nombre = "Marcela", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
+            lstPersonas.Add(new PersonaModel { Id = 10, Nombre = "Irene", ApellidoPaterno = "Bejarano", ApellidoMaterno = "Alpizar", FotoPath = "foto_perfil.png" });
 
             Thread.Sleep(4000);
 
