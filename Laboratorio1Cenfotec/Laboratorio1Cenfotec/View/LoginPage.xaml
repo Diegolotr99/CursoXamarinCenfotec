@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            BackgroundColor="#47afef"
+            Opacity="0,8"
+            x:Class="Laboratorio1Cenfotec.View.LoginPage">
+   
+    <AbsoluteLayout>
+        <StackLayout x:Name="stkContainer" HorizontalOptions="Center"
+            AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <!--Login Panel-->
+            <Frame Padding="30" CornerRadius="10" WidthRequest="250" HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand">
+                <StackLayout >
+                <!--Logo Image-->
+                <StackLayout Margin="25">
+                    <Image Source="login_picture.png" HeightRequest="100"/>
+                </StackLayout>
+                    <Label Text="Email" TextColor="#9b9b9b"/>
+                    <Entry Text="{Binding User}" Placeholder="Digitar email" TextColor="#9b9b9b"/>
+                    <Label Text="Password" TextColor="#9b9b9b"/>
+                    <Entry Text="{Binding Password}" Placeholder="Digitar password" TextColor="#9b9b9b" IsPassword="true"/>
+                    <Button Text="Login" Command="{Binding LoginCommand}"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>
