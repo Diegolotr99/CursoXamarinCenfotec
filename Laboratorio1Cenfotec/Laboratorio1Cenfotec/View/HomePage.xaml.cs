@@ -11,7 +11,7 @@ namespace Laboratorio1Cenfotec.View
         {
             InitializeComponent();
 
-            BindingContext = new PersonaViewModel();
+            BindingContext = PersonaViewModel.GetInstance();
         }
     }
 }

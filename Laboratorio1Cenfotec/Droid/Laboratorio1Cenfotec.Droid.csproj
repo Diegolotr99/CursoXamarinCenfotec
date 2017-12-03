@@ -127,6 +127,9 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\borrar_icon.png" />
+    <AndroidResource Include="Resources\drawable\foto_perfil.png" />
+    <AndroidResource Include="Resources\drawable\ver_icon.png" />
+    <AndroidResource Include="Resources\drawable\login_picture.png" />
   </ItemGroup>
   <Import Project="..\Laboratorio1Cenfotec\Laboratorio1Cenfotec.projitems" Label="Shared" Condition="Exists('..\Laboratorio1Cenfotec\Laboratorio1Cenfotec.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

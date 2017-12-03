@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            x:Class="Laboratorio3.View.MainTabbedPage">
+    <!--XML-->
+    <ContentPage Title="XML" Icon="json.png">
+    	<ContentPage.Content>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Get from XML File" TextColor="Blue"/>
+                 <ListView x:Name="lstvXML"
+                            ItemsSource="{Binding lstXmlModel}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Title}" Font="16" TextColor="#4a4a4a" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                 </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+    	</ContentPage.Content>
+    </ContentPage>
+    <!--REST-->
+    <ContentPage Title="REST" Icon="rest.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Get from XML File" TextColor="Blue"/>
+
+                
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+     <!--XML-->
+    <ContentPage Title="XML" Icon="xml.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="XML"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

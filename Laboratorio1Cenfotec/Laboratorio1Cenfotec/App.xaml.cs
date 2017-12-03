@@ -9,7 +9,8 @@ namespace Laboratorio1Cenfotec
         {
             InitializeComponent();
 
-            MainPage = new UsuarioDetalle();
+           
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
