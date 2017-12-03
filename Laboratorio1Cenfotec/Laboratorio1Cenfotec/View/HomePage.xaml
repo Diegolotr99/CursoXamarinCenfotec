@@ -13,10 +13,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                             <StackLayout.GestureRecognizers>
+                            <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Path=BindingContext.VerPersonaCommand, Source={x:Reference HomePage}}" 
                                                           CommandParameter="{Binding Id}"/>
-                                </StackLayout.GestureRecognizers>
+                            </StackLayout.GestureRecognizers>
                             <Label Text="{Binding Nombre}" HorizontalOptions="Start" VerticalOptions="Center"/>
                             <Image x:Name="imgExpan" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Source="ver_icon.png" HeightRequest="28" WidthRequest="28"/>
                         </StackLayout>

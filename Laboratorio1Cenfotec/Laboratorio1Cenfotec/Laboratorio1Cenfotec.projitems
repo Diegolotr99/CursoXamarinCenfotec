@@ -30,6 +30,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\FormularioNuevaVenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -55,6 +59,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\LoginModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ArticuloModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\FormularioNuevaVenta.xaml.cs">
+      <DependentUpon>FormularioNuevaVenta.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)View\" />

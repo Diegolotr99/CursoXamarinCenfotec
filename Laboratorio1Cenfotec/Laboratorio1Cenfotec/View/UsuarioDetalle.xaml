@@ -13,9 +13,9 @@
                 <Label Text="{Binding PersonaActual.Telefono}"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <!--Informacion de Persona-->
-            <StackLayout BackgroundColor="Green" HorizontalOptions="Fill" VerticalOptions="Start">
+            <StackLayout HorizontalOptions="Fill" VerticalOptions="Start">
                 <!--Nombre-->
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Nombre Completo:"/>
@@ -39,9 +39,25 @@
             </StackLayout>
             <!--Lista de Ventas-->
             <StackLayout>
+             <ListView x:Name="lstvAccounts"
+                  ItemsSource="{Binding PersonaActual.lstVentas}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Id}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Text="{Binding TipoVenta}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Text="{Binding Monto}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Image x:Name="imgExpan" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Source="ver_icon.png" HeightRequest="28" WidthRequest="28"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             </StackLayout>
-            <!--Cuadro Rojo-->
-            <StackLayout BackgroundColor="Red" HeightRequest="50" VerticalOptions="EndAndExpand" HorizontalOptions="Fill">
+            <!--Cuadro Acciones-->
+            <StackLayout HeightRequest="50" VerticalOptions="EndAndExpand" HorizontalOptions="Fill">
+                <Button Text="Nueva Venta" Command="{Binding EnterNuevaVentaCommand}" />
             </StackLayout>
         </StackLayout>
         <Button Text="Editar" VerticalOptions="End" HeightRequest="50"/>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                x:Name="FormularioNuevaVenta"
+                x:Class="Laboratorio1Cenfotec.View.FormularioNuevaVenta">
+	<StackLayout>
+        <StackLayout>
+            <!--Descripcion-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Descripcion: "/>
+                <Entry Text="{Binding DescripcionNuevaVenta}" />
+            </StackLayout>
+            <!--Fecha de Venta-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fecha de Venta: "/>
+                <Entry Text="{Binding FechaNuevaVenta}" IsEnabled="false"/>
+            </StackLayout>
+            <!--Descripcion-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tipo de Venta: "/>
+                <Entry Text="{Binding TipoVenta}" />
+            </StackLayout>
+        </StackLayout>
+        <!--Lista Completa de Articulos-->
+        <StackLayout>
+          <ListView ItemsSource="{Binding lstArticulos}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.ArticuloSeleccionadoCommand, Source={x:Reference FormularioNuevaVenta}}" 
+                                                          CommandParameter="{Binding Id}"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="{Binding Id}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Text="{Binding NombreArticulo}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Text="{Binding Precio}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Switch IsToggled="{Binding isChecked}" HorizontalOptions="EndAndExpand"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <!--Acciones-->
+        <StackLayout>
+           <Button Text="Crear Nueva Venta" Command="{Binding CrearVentaCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -42,6 +42,58 @@ namespace Laboratorio1Cenfotec.ViewModel
 
         #region Instances
 
+        //Instancias de Venta
+
+
+        private string _DescripcionNuevaVenta { get; set; }
+
+        public string DescripcionNuevaVenta
+        {
+            get
+            {
+                return _DescripcionNuevaVenta;
+            }
+            set
+            {
+                _DescripcionNuevaVenta = value;
+                OnPropertyChanged("DescripcionNuevaVenta");
+
+            }
+        }
+
+        private string _FechaNuevaVenta { get; set; }
+
+        public string FechaNuevaVenta
+        {
+            get
+            {
+                return _FechaNuevaVenta;
+            }
+            set
+            {
+                _FechaNuevaVenta = value;
+                OnPropertyChanged("FechaNuevaVenta");
+
+            }
+        }
+
+        private string _TipoVenta { get; set; }
+
+        public string TipoVenta
+        {
+            get
+            {
+                return _TipoVenta;
+            }
+            set
+            {
+                _TipoVenta = value;
+                OnPropertyChanged("TipoVenta");
+
+            }
+        }
+
+
         private List<PersonaModel> lstOriginalPersonas = new List<PersonaModel>();
 
         private ObservableCollection<PersonaModel> _lstPersonas = new ObservableCollection<PersonaModel>();
@@ -55,7 +107,22 @@ namespace Laboratorio1Cenfotec.ViewModel
             set
             {
                 _lstPersonas = value;
-                OnPropertyChanged("lstProducts");
+                OnPropertyChanged("lstPersonas");
+            }
+        }
+
+        private ObservableCollection<ArticuloModel> _lstArticulos = new ObservableCollection<ArticuloModel>();
+
+        public ObservableCollection<ArticuloModel> lstArticulos
+        {
+            get
+            {
+                return _lstArticulos;
+            }
+            set
+            {
+                _lstArticulos = value;
+                OnPropertyChanged("lstArticulos");
             }
         }
 
@@ -109,7 +176,9 @@ namespace Laboratorio1Cenfotec.ViewModel
         public ICommand AgregarPersonaCommand { get; set; }
         public ICommand BorrarPersonaCommand { get; set; }
         public ICommand VerPersonaCommand { get; set; }
-
+        public ICommand EnterNuevaVentaCommand { get; set; }
+        public ICommand CrearVentaCommand { get; set; }
+        public ICommand ArticuloSeleccionadoCommand { get; set; }
 
         #endregion
 
@@ -145,12 +214,38 @@ namespace Laboratorio1Cenfotec.ViewModel
 
         }
 
-        private async Task InitClass()
+        private void EnterNuevaVenta()
+        {
+
+            ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new FormularioNuevaVenta());
+        }
+
+        private void CrearVenta()
         {
             
+
+        }
+
+        private async Task InitClass()
+        {
+            lstArticulos =  ArticuloModel.ObtenerTodosArticulos();
+             
             lstPersonas = await PersonaModel.ObtenerPersonas();
 
             lstOriginalPersonas = lstPersonas.ToList();
+        }
+
+        private void ArticuloSeleccionado(int id)
+        {
+            try
+            {
+                lstArticulos.Where(x=> x.Id == id).FirstOrDefault().isChecked = true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
         }
 
         private void InitCommands()
@@ -158,6 +253,9 @@ namespace Laboratorio1Cenfotec.ViewModel
             AgregarPersonaCommand = new Command(AgregarPersona);
             BorrarPersonaCommand = new Command<int>(BorrarPersona);
             VerPersonaCommand = new Command<int>(VerPersona);
+            EnterNuevaVentaCommand = new Command(EnterNuevaVenta);
+            CrearVentaCommand = new Command(CrearVenta);
+            ArticuloSeleccionadoCommand = new Command<int>(ArticuloSeleccionado);
         }
 
         #endregion
